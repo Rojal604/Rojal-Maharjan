@@ -37,7 +37,7 @@ export default function Home() {
   useEffect(() => {
     // Preload fonts
     if ("fonts" in document) {
-      ;(document as Document).fonts.ready.then(() => {
+      document.fonts.ready.then(() => {
         console.log("[v0] Fonts loaded")
       })
     }

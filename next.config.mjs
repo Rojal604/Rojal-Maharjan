@@ -2,6 +2,8 @@
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
+  basePath: '/Rojal-Maharjan',
+  assetPrefix: '/Rojal-Maharjan',
   reactStrictMode: true,
   compiler: {
     removeConsole: process.env.NODE_ENV === "production",
