@@ -5,7 +5,6 @@ import { Canvas } from "@react-three/fiber"
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei"
 import AboutScene from "@/components/3d/about-scene"
 import RevealOnScroll from "@/components/reveal-on-scroll"
-import WebGLDetector from "@/components/3d/webgl-detector"
 import { Code2, Rocket, Sparkles, Zap } from "lucide-react"
 
 export default function About() {
@@ -35,22 +34,13 @@ export default function About() {
   return (
     <section id="about" className="relative min-h-screen py-20 px-6">
       <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-96 opacity-30 pointer-events-none hidden lg:block">
-        <WebGLDetector fallback={
-          <div className="w-full h-full bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-lg flex items-center justify-center">
-            <div className="text-center text-white/70">
-              <div className="text-2xl mb-2">🎨</div>
-              <div className="text-sm">3D Background</div>
-            </div>
-          </div>
-        }>
-          <Canvas>
-            <PerspectiveCamera makeDefault position={[0, 0, 8]} />
-            <Suspense fallback={null}>
-              <AboutScene />
-            </Suspense>
-            <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={0.5} />
-          </Canvas>
-        </WebGLDetector>
+        <Canvas>
+          <PerspectiveCamera makeDefault position={[0, 0, 8]} />
+          <Suspense fallback={null}>
+            <AboutScene />
+          </Suspense>
+          <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={0.5} />
+        </Canvas>
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
