@@ -17,7 +17,7 @@ export default function Projects() {
       description:
         "Interactive 3D product customization tool with real-time rendering, material switching, and AR preview capabilities. Built for e-commerce platforms.",
       tech: ["Three.js", "React", "WebGL", "GSAP"],
-      image: "/3d-product-configurator-interface.jpg",
+      image: "/Rojal-Maharjan/3d-product-configurator-interface.jpg",
       demo: "#",
       highlights: ["Real-time 3D rendering", "Material customization", "AR integration", "60fps performance"],
     },
@@ -26,7 +26,7 @@ export default function Projects() {
       description:
         "Award-winning portfolio with scroll-triggered 3D animations, particle systems, and cinematic camera movements. Featured on Awwwards.",
       tech: ["GSAP", "R3F", "Lenis", "Framer Motion"],
-      image: "/immersive-3d-portfolio-website.jpg",
+      image: "/Rojal-Maharjan/immersive-3d-portfolio-website.jpg",
       demo: "#",
       highlights: ["Scroll animations", "Particle effects", "Post-processing", "Mobile optimized"],
     },
@@ -35,7 +35,7 @@ export default function Projects() {
       description:
         "VR-ready virtual showroom with physics interactions, spatial audio, and multi-user support. Enables remote product demonstrations.",
       tech: ["Cannon.js", "Three.js", "React", "WebRTC"],
-      image: "/virtual-reality-showroom.jpg",
+      image: "/Rojal-Maharjan/virtual-reality-showroom.jpg",
       demo: "#",
       highlights: ["Physics simulation", "VR support", "Multi-user", "Spatial audio"],
     },
@@ -88,7 +88,7 @@ export default function Projects() {
               >
                 <div className="aspect-video bg-secondary relative overflow-hidden">
                   <img
-                    src={project.image || "/placeholder.svg"}
+                    src={project.image || "/Rojal-Maharjan/placeholder.svg"}
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
