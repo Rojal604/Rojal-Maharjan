@@ -22,10 +22,10 @@ else
     git commit -m "Deploy: Update portfolio site"
 fi
 
-# Push to GitHub
-echo "🌐 Pushing to GitHub..."
+# Push to remote repository
+echo "🌐 Pushing to remote repository..."
 git push origin main
 
 echo "✅ Deployment complete!"
-echo "🔗 Your site will be available at: https://YOUR_USERNAME.github.io/cinematic-3d-portfolio"
-echo "⏱️  It may take a few minutes for GitHub Pages to update."
+echo "🔗 Your site has been deployed successfully"
+echo "⏱️  It may take a few minutes for the deployment to update."

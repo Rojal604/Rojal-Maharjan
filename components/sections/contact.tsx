@@ -6,7 +6,7 @@ import { useState } from "react"
 import RevealOnScroll from "@/components/reveal-on-scroll"
 import MagneticButton from "@/components/magnetic-button"
 import { motion } from "framer-motion"
-import { Mail, MapPin, Phone, Send, Github, Linkedin, Twitter } from "lucide-react"
+import { Mail, MapPin, Phone, Send, Linkedin, Twitter } from "lucide-react"
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -56,7 +56,6 @@ export default function Contact() {
   ]
 
   const socialLinks = [
-    { icon: Github, label: "GitHub", href: "#" },
     { icon: Linkedin, label: "LinkedIn", href: "#" },
     { icon: Twitter, label: "Twitter", href: "#" },
   ]
@@ -136,7 +135,7 @@ export default function Contact() {
                     required
                   />
                 </div>
-                <MagneticButton
+                <button
                   type="submit"
                   className="w-full px-8 py-4 bg-primary text-primary-foreground rounded-lg font-sans font-bold hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
@@ -155,7 +154,7 @@ export default function Contact() {
                       Send Message
                     </>
                   )}
-                </MagneticButton>
+                </button>
 
                 {submitStatus === "success" && (
                   <motion.p

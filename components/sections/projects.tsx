@@ -6,7 +6,7 @@ import { OrbitControls, PerspectiveCamera } from "@react-three/drei"
 import ProjectCard3D from "@/components/3d/project-card-3d"
 import RevealOnScroll from "@/components/reveal-on-scroll"
 import { motion, AnimatePresence } from "framer-motion"
-import { ExternalLink, Github } from "lucide-react"
+import { ExternalLink } from "lucide-react"
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<number | null>(null)
@@ -18,7 +18,6 @@ export default function Projects() {
         "Interactive 3D product customization tool with real-time rendering, material switching, and AR preview capabilities. Built for e-commerce platforms.",
       tech: ["Three.js", "React", "WebGL", "GSAP"],
       image: "/3d-product-configurator-interface.jpg",
-      github: "#",
       demo: "#",
       highlights: ["Real-time 3D rendering", "Material customization", "AR integration", "60fps performance"],
     },
@@ -28,7 +27,6 @@ export default function Projects() {
         "Award-winning portfolio with scroll-triggered 3D animations, particle systems, and cinematic camera movements. Featured on Awwwards.",
       tech: ["GSAP", "R3F", "Lenis", "Framer Motion"],
       image: "/immersive-3d-portfolio-website.jpg",
-      github: "#",
       demo: "#",
       highlights: ["Scroll animations", "Particle effects", "Post-processing", "Mobile optimized"],
     },
@@ -38,7 +36,6 @@ export default function Projects() {
         "VR-ready virtual showroom with physics interactions, spatial audio, and multi-user support. Enables remote product demonstrations.",
       tech: ["Cannon.js", "Three.js", "React", "WebRTC"],
       image: "/virtual-reality-showroom.jpg",
-      github: "#",
       demo: "#",
       highlights: ["Physics simulation", "VR support", "Multi-user", "Spatial audio"],
     },
@@ -111,14 +108,6 @@ export default function Projects() {
                   </div>
                   <div className="flex gap-3">
                     <a
-                      href={project.github}
-                      className="flex items-center gap-2 text-sm text-card-foreground/70 hover:text-primary transition-colors"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <Github size={16} />
-                      Code
-                    </a>
-                    <a
                       href={project.demo}
                       className="flex items-center gap-2 text-sm text-card-foreground/70 hover:text-primary transition-colors"
                       onClick={(e) => e.stopPropagation()}
@@ -182,12 +171,6 @@ export default function Projects() {
                     </ul>
                   </div>
                   <div className="flex gap-4">
-                    <a
-                      href={projects[selectedProject].github}
-                      className="flex-1 px-6 py-3 bg-transparent border-2 border-primary text-primary rounded-lg font-sans font-bold hover:bg-primary hover:text-primary-foreground transition-colors text-center"
-                    >
-                      View Code
-                    </a>
                     <a
                       href={projects[selectedProject].demo}
                       className="flex-1 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-sans font-bold hover:bg-primary/90 transition-colors text-center"
