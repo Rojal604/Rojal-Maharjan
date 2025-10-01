@@ -1,9 +1,27 @@
 "use client"
+import { useState, useEffect } from "react"
 import AnimatedText from "@/components/animated-text"
 import MagneticButton from "@/components/magnetic-button"
 import { motion } from "framer-motion"
 
 export default function Hero() {
+  const [stars, setStars] = useState<Array<{
+    left: string
+    top: string
+    animationDelay: string
+    animationDuration: string
+  }>>([])
+
+  useEffect(() => {
+    // Generate stars only on client side to avoid hydration mismatch
+    const generatedStars = Array.from({ length: 50 }).map(() => ({
+      left: `${Math.random() * 100}%`,
+      top: `${Math.random() * 100}%`,
+      animationDelay: `${Math.random() * 3}s`,
+      animationDuration: `${2 + Math.random() * 3}s`,
+    }))
+    setStars(generatedStars)
+  }, [])
   return (
     <section id="hero" className="relative h-screen w-full overflow-hidden min-w-full">
       {/* CSS Animated Background */}
@@ -18,15 +36,15 @@ export default function Hero() {
         
         {/* Animated particles */}
         <div className="absolute inset-0">
-          {Array.from({ length: 50 }).map((_, i) => (
+          {stars.map((star, i) => (
             <div
               key={i}
               className="absolute w-1 h-1 bg-white/30 rounded-full animate-twinkle"
               style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 3}s`,
-                animationDuration: `${2 + Math.random() * 3}s`,
+                left: star.left,
+                top: star.top,
+                animationDelay: star.animationDelay,
+                animationDuration: star.animationDuration,
               }}
             />
           ))}

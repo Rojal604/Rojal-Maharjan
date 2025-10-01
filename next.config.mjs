@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  output: process.env.NODE_ENV === 'production' ? 'export' : undefined,
   trailingSlash: true,
-  basePath: '/Rojal-Maharjan',
-  assetPrefix: '/Rojal-Maharjan',
+  basePath: process.env.NODE_ENV === 'production' ? '/Rojal-Maharjan' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/Rojal-Maharjan' : '',
   reactStrictMode: true,
   compiler: {
     removeConsole: process.env.NODE_ENV === "production",
